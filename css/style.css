@@ -1,6 +1,4 @@
 :root {
-  --color-h: 230;
-  --color-s: 100%;
   --color-l: 50%;
 }
 
@@ -15,19 +13,31 @@ p {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: white;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
-  margin: 2vh 10vw;
+  margin: 4vh 10vw;
+
+  & #logo {
+    color: hsl(230, 100%, calc(var(--color-l) + 10%));
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-shadow: 2px 0.1rem 1px hsl(230, 100%, calc(var(--color-l) + 30%));
+  }
+
+  & a {
+    font-size: 0.75rem;
+    color: grey;
+    margin: 0 1rem;
+  }
 }
 
 .hero {
-  background: hsl(var(--color-h),
-      var(--color-s),
-      calc(var(--color-l))) url("../assets/hero.jpg") no-repeat center;
+  background: hsl(230, 100%, calc(var(--color-l))) url("../assets/hero.jpg") no-repeat center;
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -37,37 +47,43 @@ nav {
   align-items: center;
   text-align: center;
 
-  && p:first-child {
+  & p:first-child {
     color: white;
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 3rem;
     padding: 0 40vw;
-    line-height: 4rem;
+    line-height: 4.6rem;
 
-    && span {
-      color: hsl(var(--color-h),
-          var(--color-s),
-          calc(var(--color-l)));
+    & span {
+      color: hsl(230, 100%, calc(var(--color-l)));
+      text-shadow: 0.15rem 0.2rem hsl(230,
+          100%,
+          calc(var(--color-l) + 35%));
     }
   }
 
-  && p:nth-child(2) {
-    color: white;
-    margin: 2rem 0 2.5rem;
+  & p:nth-child(2) {
+    color: #d0d0d0;
+    margin: 0.7rem 0 2.5rem;
   }
 
-  && button {
-    background-color: hsl(var(--color-h),
-        var(--color-s),
+  & button {
+    background-color: hsl(230,
+        100%,
         calc(var(--color-l)));
     color: white;
     border: none;
     padding: 1rem 1.5rem;
-    border-radius: 4px;
-    box-shadow: 0.5rem 0.5rem hsl(var(--color-h),
-        var(--color-s),
-        calc(var(--color-l) + 40%));
+    border-radius: 0.2rem 0.8rem;
+    box-shadow: 0.5rem 0.5rem hsl(230,
+        100%,
+        calc(var(--color-l) + 35%));
 
   }
 
+}
+
+.hero:hover {
+  display: none;
+  /*background-color: red;*/
 }
