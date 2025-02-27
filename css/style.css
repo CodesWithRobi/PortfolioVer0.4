@@ -1,8 +1,16 @@
+:root {
+  --color-h: 230;
+  --color-s: 100%;
+  --color-l: 50%;
+}
+
 * {
   box-sizing: border-box;
 }
 
-body, div, p {
+body,
+div,
+p {
   margin: 0;
 }
 
@@ -17,7 +25,9 @@ nav {
 }
 
 .hero {
-  background: navy url("../assets/hero.jpg") no-repeat center; 
+  background: hsl(var(--color-h),
+      var(--color-s),
+      calc(var(--color-l))) url("../assets/hero.jpg") no-repeat center;
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -27,26 +37,37 @@ nav {
   align-items: center;
   text-align: center;
 
-  && p:first-child{
+  && p:first-child {
     color: white;
     font-weight: bold;
     font-size: 2.5rem;
     padding: 0 40vw;
     line-height: 4rem;
+
+    && span {
+      color: hsl(var(--color-h),
+          var(--color-s),
+          calc(var(--color-l)));
+    }
   }
 
-  && p:nth-child(2){
+  && p:nth-child(2) {
     color: white;
     margin: 2rem 0 2.5rem;
   }
 
   && button {
-    background-color: pink;
+    background-color: hsl(var(--color-h),
+        var(--color-s),
+        calc(var(--color-l)));
     color: white;
     border: none;
     padding: 1rem 1.5rem;
     border-radius: 4px;
+    box-shadow: 0.5rem 0.5rem hsl(var(--color-h),
+        var(--color-s),
+        calc(var(--color-l) + 40%));
 
   }
-  
+
 }
