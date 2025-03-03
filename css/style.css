@@ -61,7 +61,7 @@ nav {
     position: absolute;
     z-index: -1;
     inset: 0;
-    background: hsl(230, 100%, calc(var(--color-l))) url("../assets/hero.jpg") no-repeat center;
+    background: hsl(230, 100%, var(--color-l)) url("../assets/hero.jpg") no-repeat center;
     background-size: cover;
     pointer-events: none;
     transition: 0.7s ease-in-out;
@@ -98,6 +98,11 @@ nav {
     border-radius: 0.2rem 0.8rem;
     box-shadow: 0.5rem 0.5rem hsl(230, 100%, calc(var(--color-l) + 35%));
     transition: 0.7s ease-in-out;
+
+    & a {
+      text-decoration: none;
+      color: white;
+    }
   }
 
   &:hover {
